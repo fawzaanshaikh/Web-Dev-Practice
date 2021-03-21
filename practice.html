@@ -1,0 +1,84 @@
+<!DOCTYPE html>	<!--This is written so as to tell about the browser the version of HTML being used-->
+
+<html>
+	<head>
+		<title>HTML Practice</title>
+	</head>
+	<!-- Every HTML page has a body element -->
+	<body>
+		<!-- This is a comment and is not seen in the browser or is used in code-->
+		This is the body of the site.<br>
+		<h1>Hello, World! (This is a heading)</h1>
+		<h2>This is a subheading. (There are upto h6 types of headers. These get smaller-fontwise- as the number of the header increases.)</h2>
+		<main> <!--main tag is used to let the search engines and other developers to know the main content of the page-->
+			
+			<br><a href = "#footer">Jump to Bottom</a> <!--This is an internal link where '#' is used followed by the id attribute of the element it has to link to-->
+			
+			<br><img src = "https://bit.ly/fcc-relaxing-cat" alt = "A relaxing cat."> <!-- This is an image tag which displays the image that is sourced
+																						through src attribute, alt attribute is used if the image doesn't load-->
+			<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, 
+				hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, 
+				shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. 
+				Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+			<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. 
+				Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. 
+				Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+			<p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, 
+				especially couch or lay on arms while you're using the keyboard. Missing until dinner time toy mouse squeak roll over. 
+				With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+			<p>Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. 
+				Get video posted to internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on 
+				owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as
+				door open yet destroy couch.</p><br><br>
+
+			
+			<br><a href = "https://freecodecamp.org" target = "_blank"><!--target = "_blank" attribute opens link in new tab--> This is where I learnt more of web development from </a>
+
+			<div> <!--div element is a general purpose container for other elements-->
+				<br><ul>	<!--An unordered list-->
+					<li>One</li>
+					<li>Two</li>
+					<li>Three</li>
+				</ul>
+				<ol>	<!--An ordered list-->
+					<li>One</li>
+					<li>Two</li>
+					<li>Three</li>
+				</ol>
+			</div>
+
+			<br><a href = "#"><img src = "https://bit.ly/fcc-relaxing-cat"></a> This image is now a link. <!--The image is a dead link-->
+
+			<!-- You can use a (anchor) elements to link to content outside of your web page. 
+				a elements need a destination web address called an href attribute. They also need anchor text. They can be placed within a p element too. -->
+			
+			<br><br>
+			<form action = "#"> <!--This declares a form and the link in the action attribute receives the data provided in the form-->
+				<input type = "text" placeholder = "Enter some text"> <!--input elements are a convenient way to get input from your user, type = "text" allows input of text within a textbox, placeholder displays a hint in the textbox-->
+				<input type = "text" required placeholder = "Entering a value is required here"> <!--required attribute does not allow the submitting of a form until a value is entered-->
+
+				<label for = "radio"> <!--label element surrounds the radiobutton inputs, associating itself with the radiobuttons-->
+					<br><input id = "radio" type = "radio" name = "radio-button-group"> Option 1 <!--for attribute in label and id attribute in radiobutton make them highly associative to each other-->
+					<br><input id = "radio" type = "radio" name = "radio-button-group"> Option 2 <!--for and id attributes are not necessary, but are considered as good practice-->
+					<br><input id = "radio" type = "radio" name = "radio-button-group"> Option 3 <!--name attribute of radiobuttons being same makes them a radio button group-->
+				</label><!--label elements can be used for individual radiobuttons to get more specific associativity too-->
+
+				<label for = "check1">
+					<br><input id = "check1" value = "check1" type = "checkbox" name = "check-box">Check 1	<!--The value attribute is used to specify to the server what option is selected.-->
+				</label>																					<!--The server receives the input as "check-box" = "check1", if Check 1 is selected-->
+				<label for = "check2">																		<!--value attribute is used with radiobuttons too-->
+					<br><input id = "check2" value = "check2" type = "checkbox" name = "check-box">Check 2
+				</label>
+				<label for = "check3">
+					<br><input id = "check3" value = "check3" type = "checkbox" name = "check-box" checked>Check 3 <!--checked attribute selects an option by default-->
+				</label>
+
+				<br><button type = "button">Submit</button> <!--The data in the textfield will be sent to the link specified in the action attribute in the form tag-->
+			</form>
+
+			<br><a href = "#">Back to Home</a> <!-- This internal link links to the top of the page, it is known as a dead link-->
+
+			<br><footer id = "footer">This is the practice site's footer.</footer>
+		</main>
+	</body>
+</html>

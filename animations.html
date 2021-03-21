@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Animations with CSS and JS</title>
+
+        <style>
+            
+            #click-to-show-content-div {
+                position: relative;
+                top: 100px;
+                left: 10%;
+                background-color: pink;
+                height: 50px;
+                width: 60%;
+            }
+
+            #click-to-show-content-text {
+                position: relative;
+                top: 13px;
+                left: 10%;
+                font-size: 20px;
+            }
+
+            #content-div {
+                position: relative;
+                top: 0px;
+                background-color: lightgreen;
+                font-size: 20px;
+                display: none;
+            }
+
+            #content {
+                position: relative;
+                padding: 10px 10px 10px 10px;
+            }
+
+            #div-2 {
+                position: relative;
+                top: 100px;
+                font-size: 20px;
+                left: 10%;
+                background-color: pink;
+                height: 50px;
+                width: 60%;
+            }
+
+            #para {
+                position: relative;
+                top: 13px;
+                left: 10%;
+                font-size: 20px;    
+            }
+
+            /* ---------------------------------- */
+
+            .down-arrow {
+                position: relative;
+                top: 13px;
+                left: 70%;
+                font-size: 20px;
+            }
+
+            /* ---------------------------------- */
+            body {
+                font-family: sans-serif;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <div id = "click-to-show-content-div">
+            <span id = "click-to-show-content-text">Click to show more</span>
+            <span class = "down-arrow">'v'</span>
+            
+            <div id = "content-div">
+                <p id = "content">
+                    This is the content that needs to be shown when the click to show more is clicked.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident incidunt et enim cupiditate,<br>
+                    ad vitae perferendis distinctio libero minima temporibus sit voluptatum impedit aliquid, recusandae corporis laudantium voluptatibus a illum?
+                </p>
+            </div>
+
+            <div id = "div-2">
+            <p id = "para">
+                This is another stuff.
+                <span class = "down-arrow">'v'</span>
+            </p>
+        </div>
+        </div>
+
+        
+
+        <script>
+            var shown = false;
+            document.getElementById("click-to-show-content-div").addEventListener("click", function() {
+                const content_div = document.getElementById("content-div");
+                // content_div.style.display = "block";
+                
+
+                content_div.style.display = "block";
+
+                var id = null;
+                var pos = 5;
+                clearInterval(id);
+                id = setInterval(frame, 25);
+
+                function frame() {
+                    if (pos == 20) {
+                        clearInterval(id);
+                    } else {
+                        pos++;
+                        content_div.style.top = pos + "px";
+                    }
+                }
+            });
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Practice</title>
+    </head>
+
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+        #animation {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: red;
+        }
+
+        #remove-event-listener-div {
+            background-color: coral;
+            border: 1px solid;
+            padding: 50px;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+    
+    <body onbeforeunload = "return onExit()">
+        <p id = "hello-world"></p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate deserunt perferendis mollitia neque eius sequi tempora at accusamus praesentium ex, non repudiandae amet cum animi aut itaque a, minus blanditiis.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde soluta eum aspernatur debitis numquam velit? Molestiae deserunt nam dolor, enim at, velit iusto ad optio excepturi quae est explicabo accusamus.</p>
+
+        <form id = "frm1">
+            First name: <input type="text" name="fname" value="Name">
+            <input id = "form-submit-button" type="submit" value="Submit">
+        </form> 
+
+        <p id = "display-para"></p>
+
+        <p id = "first-intro-para" class = "intro">This is an introduction</p>
+        <p class = "intro">This is also an introduction</p>
+        <p class = "intro">This is an introduction and it has been repeated thrice</p>
+        <p class = "display-intros"></p>
+
+        <p id = "display-form-data"></p>
+
+        <button type = "button" onclick = "document.getElementById('display-button').innerHTML = 'Clicked'">Knopf</button>
+        <p id = "display-button"></p>
+
+        <div id = "container">  <!-- All animations have to go relative to a container --> <!-- The container should have the style "position: relative"-->
+            <div id = "animation">  <!-- The animation should have the style "position: absolute"-->
+                My animation will go here. 
+            </div>
+        </div>
+        <input type = "button" value = "Start" onclick = "myMove()">
+
+        <h1 onclick = "this.innerHTML = 'Thanks!'">Click Me!</h1>
+
+        <!-- The onload and onunload events are triggered when the user enters or leaves the page. -->
+        <!-- Example - <body onload="checkCookies()"> -->
+        <!-- The onload and onunload events can be used to deal with cookies. -->
+        
+        <!-- The onchange event is often used in combination with validation of input fields. -->
+        <!-- The upperCase() function will be called when a user changes the content of an input field. -->
+        <input type = "text" id = "fname" onchange = "upperCase(this)" placeholder = "i capitalize"> 
+
+        <h1 onmouseover = "this.innerHTML = 'Rolling the mouse over me, huh?'" onmouseout = "this.innerHTML = 'I\'m just a text'">I'm just a text.</h1>
+        <h1 onmousedown = "this.innerHTML = 'You\'ve clicked me, now release me.'" onmouseup = "this.innerHTML = 'Finally released'" onclick = "this.innerHTML = 'Click complete.'">Try to click and hold.</h1>
+
+        <input onfocus = "this.style.background = 'yellow';" placeholder = "Focus on me and I change my colour"> <!-- When the input field comes into focus, its colour changes to yellow -->
+        <br><br><br>
+
+        <button id = "time-and-date">This Very Instant</button>
+        <p id = "time-and-date-display"></p>    <!-- Date and time of that instant are displayed -->
+
+        <div id = "remove-event-listener-div">
+            <p>This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.</p>
+            <p>Click the button to remove the div's event handler.</p>
+            <button onclick="removeHandler()" id="myBtn">Remove</button>
+        </div>
+        <p id = "remove-event-listener-display"></p>
+
+        <!-- HTML Code to add new element (node in DOM) -->
+        <div id="div1">
+            <p id="p1">This is a paragraph.</p>
+            <p id="p2">This is another paragraph.</p>
+        </div>
+        
+        <script>
+
+            alert("Welcome");
+            document.getElementById("hello-world").innerHTML = "----- Hello World! -----";  // the innerHTML sets the tag with id = "display" with the message "Hello World!"
+
+            const all_p = document.getElementsByTagName("p");   // object containing the list of <p> tags is returned to x
+            document.getElementById("display-para").innerHTML = "----- The second element in p tags list of the object in x is: " + all_p[1].innerHTML + " -----";   // the second element in the variable x is displayed
+
+            const all_p_intro = document.querySelectorAll("p.intro"); // returns all <p> tags with class = "intro"
+            var text = "";
+            for (let i = 0; i < all_p_intro.length; i++) {
+                text += all_p_intro[i].innerHTML + "<br>";
+            }
+            document.getElementsByClassName("display-intros")[0].innerHTML = "-----<br>" + text + "-----"; // displays all the <p> tags with class = "intro"
+
+            document.getElementById("form-submit-button").addEventListener("click", function () {
+                var x = document.forms["frm1"];
+                var text = "";
+                var i;
+                for (i = 0; i < x.length; i++) {
+                text += x.elements[i].value + "<br>";
+                }
+                document.getElementById("display-form-data").innerHTML = text;
+            });
+
+            // To change the value of an HTML attribute, use this syntax: 
+            // document.getElementById(id).attribute = new value
+            // example - document.getElementById("image").src = "some_other.jpg";
+
+            // To change the style of an HTML element, use this syntax: 
+            // document.getElementById(id).style.property = new style
+            // example - 
+            document.getElementsByClassName("intro")[0].style.color = "cyan";   // changes the colour of the para 1 with id = "intro" to cyan
+
+            
+            /* ------------------ For animations ------------------ */
+            // var id = setInterval(frame, 5);
+
+            // function frame() {
+            //     if (/* test for finished */) {
+            //         clearInterval(id);
+            //     } else {
+            //         /* code to change the element style */ 
+            //     }
+            // }
+
+            var id = null;
+
+            function myMove() {
+                var elem = document.getElementById("animation");
+                var pos = 0;
+                
+                clearInterval(id);
+                id = setInterval(frame, 5);
+
+                function frame() {
+                    if (pos == 350) {
+                        clearInterval(id);
+                    } else {
+                        pos++;
+                        elem.style.top = pos + "px";
+                        elem.style.left = pos + "px";
+                    }
+                }
+            }
+
+            function upperCase(id) {
+                var input = id.value;
+                id.value = input.toUpperCase();
+            }
+
+            // addEventListener(event, function, useCapture);
+            // The default value is false, which will use the bubbling propagation (inner element's event is executed first then the outer),
+            //  when the value is set to true, the event uses the capturing propagation (outer element first then the inner).
+            document.getElementById("time-and-date").addEventListener("click", function() {      // Event Listener waits till the event is called and then
+                document.getElementById("time-and-date-display").innerHTML = Date();             // executes the function 
+            });
+
+
+            document.getElementById("remove-event-listener-div").addEventListener("mousemove", myFunction);
+
+            function myFunction() {
+            document.getElementById("remove-event-listener-display").innerHTML = Math.random();
+            }
+
+            function removeHandler() {
+            document.getElementById("remove-event-listener-div").removeEventListener("mousemove", myFunction);
+            }
+
+            
+            // Below three lines mean the same
+            var text = document.getElementById("first-intro-para").innerHTML;
+            text = document.getElementById("first-intro-para").firstChild.nodeValue;
+            text = document.getElementById("first-intro-para").childNodes[0].nodeValue;
+
+            
+            // DOM Root Nodes = document.body - The body of the document
+            //                = document.documentElement - The full document
+            
+            // Other types of properties of Nodes => nodeName, nodeType, nodeValue
+
+            /* ------------------ Creating new HTML elements by nodes ------------------ */
+            var para = document.createElement("p");
+            var node = document.createTextNode("This is a new p element.");
+            para.appendChild(node);
+
+            var element = document.getElementById("div1");
+            element.appendChild(para);  // This attaches it as the last child of the div node
+
+            // To attach the new element in between the sibling nodes, insertBefore() can be used
+            para = document.createElement("p");
+            node = document.createTextNode("This is a new para in between sibling nodes. There used to be a another p element below, it got removed.");
+            para.appendChild(node);
+            var sibling = document.getElementById("p2");
+
+            element.insertBefore(para, sibling);
+
+            /* ------------------ Removing HTML Elements ------------------ */
+            para = document.getElementById("p2");
+            para.remove(); 
+            // Or remove from the parent by parent.removeChild(child); Example - element.removeChild(para);
+            // Another common workaround is child.parentNode.removeChild(child); Example - para.parentNode.removeChild(para);
+
+            /* ------------------ Replacing HTML Elements ------------------ */
+            para = document.createElement("p");
+            node = document.createTextNode("This is a replaced paragraph.");
+            para.appendChild(node);
+
+            element.replaceChild(para, document.getElementById("p1"));
+
+            /* There is difference between NodeList and HTMLCollection */
+
+            function onExit() {     // Before the document unloads, the do you want to leave message is displayed and this function is run
+                return "Yes.";
+            }
+
+        </script>
+    </body>
+
+</html>

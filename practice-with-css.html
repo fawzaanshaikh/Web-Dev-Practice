@@ -1,0 +1,144 @@
+<!DOCTYPE html>	<!--This is written so as to tell about the browser the version of HTML being used-->
+
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> <!--This is to get a font called Lobster from Google Fonts-->
+<!--This is a CSS Constructor-->
+<style> 
+	
+	/* ---------------------------------------------------------------------------------------------------- */
+	/* Styling the body element will cause all the other elements to inherit the styles of the body element. 
+		It can still be overridden by class selectors and the likes.
+	*/
+	/* ---------------------------------------------------------------------------------------------------- */
+
+	:root {	/* :root is a pseudo-class selector which matches with the root document or the <html> tag */
+		--some-other-background: yellow;	/* This makes the variable global and can be used by any selector */
+	}
+
+	@media (max-width: 800px) {		/* Media query checks the size of the screen. If the size of the screen does not fit the criteria in the brackets, then the block inside is executed */
+		:root {
+			--background: purple;	/* Usage of variables also becomes helpful like this */
+		}
+	}
+
+	body {
+		background-color: var(--background, white);
+	}
+
+    h1 {    /* This is an element selector */
+        color: red; /* Or color: #ff0000; or color: #f00 (some colors give possibility of such shorthand), or rgb(255, 0, 0) */
+    }
+
+    .blue-text {
+        color: blue !important; /* !important prevents this class selector to be overridden, this is helpful when we use CSS Libraries */
+    }
+
+    p {
+        font-size: 25px; /* This selects the font size of the text */
+        font-family: Lobster; /* This selects the font family of the text. The style of writing this line is font-family: FAMILY_NAME, GENERAL_NAME. GENERAL_NAME is a font which is used if the FAMILY_NAME font is not available. If this happens, then it is known as the degrading of a font.*/
+    }
+
+    .smaller-image {
+        width: 100px; /* The width of the image is set to 100 pixels */ 
+    }
+
+    .thick-green-border {
+        border-color: green;
+        border-width: 10px;
+        border-style: solid;
+        border-radius: 50%; /* This makes the image a complete circle */ 
+    }
+
+    .silver-background {
+        background-color: silver;
+		--some-other-background: blue;	/* This is how a variable is declared in CSS. It is useful when one change has to be made at multiple places. Here, the variable is over-written from the :root declaration */
+    }
+
+	.list-background {
+		background-color: var(--some-other-background, orange)	/* The variable declared is used here. The color given after the comma is a fallback color which is displayed if there is some problem with the variable, helps with browser compatibility */
+	}
+
+    #form-id {
+        background-color: greenyellow;
+    }
+
+	[type = "checkbox"] {	/* This CSS Selector is an attribute selector. Here, it selects the checkboxes in the HTML */ 
+		margin: 20px 0px 20px 0px;
+	}
+</style>
+
+<html>
+	<head>
+		<title>CSS Practice</title>
+	</head>
+	<body>
+		This is the body of the site.<br>
+		<h1>Hello, World! (This is a heading)</h1>
+		<h2 style = "color: yellow;"> <!-- This is inline CSS -->This is a subheading. (There are upto h6 types of headers. These get smaller-fontwise- as the number of the header increases.)</h2>
+		<main> <!--main tag is used to let the search engines and other developers to know the main content of the page-->
+			
+			<br><a href = "#footer">Jump to Bottom</a>
+			
+			<br><img src = "https://bit.ly/fcc-relaxing-cat" alt = "A relaxing cat." style = "border-radius: 20px;">
+			<p class = "blue-text"> <!-- The class attribute helps in the CSS Constructor -->Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, 
+				hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, 
+				shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. 
+				Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+			<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. 
+				Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. 
+				Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+			<p>Meowwww loved it, hated it, loved it, hated it yet spill litter box, scratch at owner, destroy all furniture, 
+				especially couch or lay on arms while you're using the keyboard. Missing until dinner time toy mouse squeak roll over. 
+				With tail in the air lounge in doorway. Man running from cops stops to pet cats, goes to jail.</p>
+			<p class = "blue-text">Intently stare at the same spot poop in the plant pot but kitten is playing with dead mouse. 
+				Get video posted to internet for chasing red dot leave fur on owners clothes meow to be let out and mesmerizing birds leave fur on 
+				owners clothes or favor packaging over toy so purr for no reason. Meow to be let out play time intently sniff hand run outside as soon as
+				door open yet destroy couch.</p><br><br>
+
+			
+			<br><a href = "https://freecodecamp.org" target = "_blank">This is where I learnt more of web development from </a>
+
+			<div class = "silver-background"> <!--div element is a general purpose container for other elements--> <!-- Because of the CSS, the background colour is changed to silver for the entire div element-->
+				<br><ul class = "list-background">	<!--An unordered list-->
+					<li>One</li>
+					<li>Two</li>
+					<li>Three</li>
+				</ul>
+				<ol>	<!--An ordered list-->
+					<li>One</li>
+					<li>Two</li>
+					<li>Three</li>
+				</ol>
+			</div>
+
+			<br><a href = "#"><img src = "https://bit.ly/fcc-relaxing-cat" class = "smaller-image thick-green-border"></a> This image is now a link. <!-- Multiple classes can be added to elements by seperating the class names by a space-->
+			
+			<br><br>
+			<form action = "#" id = "form-id"> <!-- id attributes hold higher priority than classes for HTML in CSS. Multiple elements can have the same class, but not the same id (best practice)-->
+				<input type = "text" placeholder = "Enter some text"> 
+				<input type = "text" required placeholder = "Entering a value is required here">
+
+				<label for = "radio"> 
+					<br><input id = "radio" type = "radio" name = "radio-button-group"> Option 1 
+					<br><input id = "radio" type = "radio" name = "radio-button-group"> Option 2 
+					<br><input id = "radio" type = "radio" name = "radio-button-group"> Option 3 
+				</label>
+
+				<label for = "check1">
+					<br><input id = "check1" value = "check1" type = "checkbox" name = "check-box">Check 1	
+				</label>																					
+				<label for = "check2">																		
+					<br><input id = "check2" value = "check2" type = "checkbox" name = "check-box">Check 2
+				</label>
+				<label for = "check3">
+					<br><input id = "check3" value = "check3" type = "checkbox" name = "check-box" checked>Check 3 
+				</label>
+
+				<br><button type = "button">Submit</button> 
+			</form>
+
+			<br><a href = "#">Back to Home</a> 
+
+			<br><footer id = "footer">This is the practice site's footer.</footer>
+		</main>
+	</body>
+</html>

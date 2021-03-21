@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<style>
+    h3 {
+        font-size: 27px;    /* Font size of headings can be changed like this. */
+    }
+
+    p {
+        line-height: 20px; /* line-height determines the vertical space between the lines in a text */
+    }
+
+    .center-aligned {
+        text-align: center;
+    }
+
+    .justified {
+        text-align: justify;
+    }
+
+    .a-box {
+        position: relative;
+        width: 200px;   /* Limiting the size of the box width-wise */
+        height: 100px;   /* Limiting the size of the box height-wise */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px 5px;
+        padding: 40px;
+        background-color: rgba(45, 45, 45, 0.1) /* rgba() is red, green, blue and alpha. rgb works the same as rgb(), but, alpha determines the opacity and ranges from 0 (trnsparent) to 1 (opaque) */
+    }
+
+    .box-text {
+        position: absolute; /* This separates the element from the natural flow of the document and is kept relative to its parent iff its parent has a position set (usually relative), else the element is placed according to the body ele */
+        top: 30px;
+        left: 40px;
+
+        text-align: center;
+        text-transform: none;   /* capitalize = first letter capital, uppercase = all letters capital, lowercase = all letters small, initial = default text value, none = original text as written in the HTML, inherit = style inherited from parent element */
+        font-weight: 800; /* font-weight decides how thick or thin the text is */
+        opacity: 0.7; /* Chooses the opacity or transparency of the element ranging from 0 to 1 */
+    }
+
+    #shadow-box {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* This gives a shadow around the box */
+        /* box-shadow: [offset-x] [offset-y] [blur-radius](optional) [spread-radius](optional) [color]*/
+    }
+
+    a:hover{
+        color: pink;    /* :hover is a pseudo-class. A pseudo-class refers to a specific state of the element */ 
+    }
+
+    .dead-link {
+        position: relative; /* Keeps the natural flow of the document, but allows the change of the relative position of the selected element */
+        left: 100px;    /* Here, this means that the link has to be 100px away from the left (offsets 100px to the right) of the position of where it naturally is */
+        /* Others include top: , bottom: , right: */
+    }
+</style>
+
+<html>
+    <head>
+        <title>CSS Practice 2</title>
+    </head>
+
+    <body>
+        <h3>This is an h3 heading</h3>
+        <div class = "center-aligned">
+            This text is center aligned
+            <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching <strong>attack your ankles</strong> chase the red dot, <!--<strong> = font-weight: bold;-->
+				hairball run catnip eat the grass sniff. Purr jump <u>eat the grass</u> rip the couch scratched sunbathe, <!--<u> = text-decoration: underline; -->
+				shed everywhere <em>rip the couch</em> sleep in the sink fluffy fur catnip scratched. <!--<em> = font-style: italics;--> 
+                Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.
+                <s>A cat is a dog. </s> <!--<s> = text-decoration: line-through-->
+            </p> 
+        </div>
+
+        <br><hr><br>
+        
+        <div class = "justified">
+            This text is justified
+            <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, 
+				hairball run catnip eat the grass sniff. Purr jump eat the grass rip the couch scratched sunbathe, 
+				shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched. 
+                Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.
+            </p> 
+        </div>
+
+        <div class = "a-box" id = "shadow-box">
+            <p class = "box-text">This is a box. </p>
+        </div> <!-- Creates a box in the HTML document on the basis of the CSS-->
+
+        <div class = "dead-link">
+            <a href = "#"> This is a dead link </a>
+        </div>
+    </body>
+</html>
