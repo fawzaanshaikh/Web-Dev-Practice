@@ -9,6 +9,30 @@
         line-height: 20px; /* line-height determines the vertical space between the lines in a text */
     }
 
+    #navbar {
+        width: 100%;
+        background-color: rgb(64, 224, 208);
+
+        position: fixed; /* position: fixed; makes the element stay in position on the screen of the device. So, if the screen is scrolled, the navbar still stays on the top position */
+        top: 0px;
+        left: 0px;
+    }
+
+    nav ul {
+        margin: 0px;
+        padding: 5px 0px 5px 30px;
+    }
+
+    nav li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    section, aside {
+        padding: 10px;
+        background-color: #ccc;
+    }
+
     .center-aligned {
         text-align: center;
     }
@@ -25,7 +49,7 @@
         border-radius: 5px;
         margin: 10px 5px;
         padding: 40px;
-        background-color: rgba(45, 45, 45, 0.1) /* rgba() is red, green, blue and alpha. rgb works the same as rgb(), but, alpha determines the opacity and ranges from 0 (trnsparent) to 1 (opaque) */
+        background-color: rgba(45, 45, 45, 0.1) /* rgba() is red, green, blue and alpha. rgb works the same as rgb(), but, alpha determines the opacity and ranges from 0 (transparent) to 1 (opaque) */
     }
 
     .box-text {
@@ -39,20 +63,50 @@
         opacity: 0.7; /* Chooses the opacity or transparency of the element ranging from 0 to 1 */
     }
 
-    #shadow-box {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* This gives a shadow around the box */
-        /* box-shadow: [offset-x] [offset-y] [blur-radius](optional) [spread-radius](optional) [color]*/
-    }
-
-    a:hover{
-        color: pink;    /* :hover is a pseudo-class. A pseudo-class refers to a specific state of the element */ 
-    }
-
     .dead-link {
         position: relative; /* Keeps the natural flow of the document, but allows the change of the relative position of the selected element */
         left: 100px;    /* Here, this means that the link has to be 100px away from the left (offsets 100px to the right) of the position of where it naturally is */
         /* Others include top: , bottom: , right: */
     }
+
+    .overlapping-boxes {
+        width: 200px;
+        height: 200px;
+        margin-top: 80px;
+    }
+    
+    .first {
+        background-color: red;
+        position: relative;
+        z-index: 2;     /* z-index decides which element shows up on top or gets overlapped when the elements are overalapping over one another */
+    }
+
+    .second {
+        background-color: blue;
+        position: relative;
+        left: 40px;
+        top: -200px;
+        z-index: 1;     /* Lower the z-index, lower the element is in overlapping. Highest z-index value is shown on top. z-index is always an integer. */
+    }
+
+    #shadow-box {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* This gives a shadow around the box */
+        /* box-shadow: [offset-x] [offset-y] [blur-radius](optional) [spread-radius](optional) [color]*/
+    }
+
+    #left {
+        float: left;    /* float removes the element from the natural flow of the document and sets the elements to be on teh right or left of their parent */
+        width: 50%;     /* float is generally used with width so as to decide how much horizontal space will the elements will be taking */
+    }
+
+    #right {
+        float: right;
+        width: 40%;
+    }
+
+    a:hover{
+        color: pink;    /* :hover is a pseudo-class. A pseudo-class refers to a specific state of the element */ 
+    }    
 </style>
 
 <html>
@@ -61,7 +115,15 @@
     </head>
 
     <body>
+        <nav id = "navbar">
+            <ul>
+                <li><a href = "">Home</a></li>
+                <li><a href = "">About</a></li>
+            </ul>
+        </nav>
+
         <h3>This is an h3 heading</h3>
+        
         <div class = "center-aligned">
             This text is center aligned
             <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching <strong>attack your ankles</strong> chase the red dot, <!--<strong> = font-weight: bold;-->
@@ -90,5 +152,19 @@
         <div class = "dead-link">
             <a href = "#"> This is a dead link </a>
         </div>
+
+        <section id = "left">
+            Content to be on the left of the screen.<br>
+            Some stuff
+        </section>
+        <aside id = "right">
+            Content to be on the right of the screen.<br>
+            Links
+        </aside>
+
+        <div class = "first overlapping-boxes"></div>
+        <div class = " second overlapping-boxes"></div>
+
+        <div style = "height: 1000px;"></div>
     </body>
 </html>
