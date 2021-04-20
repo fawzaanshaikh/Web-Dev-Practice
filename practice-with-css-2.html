@@ -90,6 +90,12 @@
         z-index: 1;     /* Lower the z-index, lower the element is in overlapping. Highest z-index value is shown on top. z-index is always an integer. */
     }
 
+    .gradient {
+        background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+        width: 50%;
+        margin: auto;
+    }
+
     #shadow-box {
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* This gives a shadow around the box */
         /* box-shadow: [offset-x] [offset-y] [blur-radius](optional) [spread-radius](optional) [color]*/
@@ -166,7 +172,7 @@
         <div class = "first overlapping-boxes"></div>
         <div class = " second overlapping-boxes"></div>
 
-        <div style = "height: 1000px;"></div>
+        <div class = "gradient" style = "height: 1000px;"></div>
 
         <p>Learn more about colors, hues and everything related <a href = "https://www.freecodecamp.org/learn/responsive-web-design/applied-visual-design/" >here</a></p>
     </body>
