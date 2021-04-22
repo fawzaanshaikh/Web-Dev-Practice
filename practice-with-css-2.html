@@ -98,6 +98,14 @@
         margin: auto;
     }
 
+    .repeating-gradient {
+        background: repeating-linear-gradient(45deg, red 0px, yellow 40px, blue 40px, green 80px);  /* Takes many parameters, important to know are (direction, color start/stop) */
+        border-radius: 10%;
+        height: 500px;
+        width: 50%;
+        margin: auto;
+    }
+
     #shadow-box {
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* This gives a shadow around the box */
         /* box-shadow: [offset-x] [offset-y] [blur-radius](optional) [spread-radius](optional) [color]*/
@@ -175,6 +183,7 @@
         <div class = " second overlapping-boxes"></div>
 
         <div class = "gradient"></div>
+        <div class = "repeating-gradient"></div>
 
         <p>Learn more about colors, hues and everything related <a href = "https://www.freecodecamp.org/learn/responsive-web-design/applied-visual-design/" >here</a></p>
     </body>
