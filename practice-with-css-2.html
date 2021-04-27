@@ -86,6 +86,10 @@
         z-index: 2;     /* z-index decides which element shows up on top or gets overlapped when the elements are overalapping over one another */
     }
 
+    .first:hover {
+        transform: scale(1.1);
+    }
+
     .second {
         background-color: blue;
         position: relative;
@@ -105,9 +109,18 @@
     .repeating-gradient {
         background: repeating-linear-gradient(45deg, red 0px, yellow 40px, blue 40px, green 80px);  /* Takes many parameters, important to know are (direction, color start/stop) */
         border-radius: 10%;
-        height: 500px;
-        width: 50%;
+        height: 250px;
+        width: 25%;
         margin: auto;
+        transform: scale(0.5);  /* transform property has scale function which allows to scale the size of the element */
+        /* transform also applies the changes to all the child elements within the parent element */
+    }
+
+    .repeating-gradient:hover {
+        height: 250px;
+        width: 25%;
+        transform: skewX(30deg);
+        transform: skewy(-10deg);
     }
 
     #shadow-box {
