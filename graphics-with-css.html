@@ -52,14 +52,35 @@
     top: -25px;
     left: 0px;
   }
+
+  #rect {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+    animation-name: rainbow;
+    animation-duration: 4s;
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-color: blue;
+    }
+
+    100% {
+      background-color: yellow;
+    }
+  }
   
     </style>
 
     <body>
 
         <div class = "crescent"></div>
-        <div class="heart"></div>
-    
+        <div class = "heart"></div>
+        <div id = "rect"></div>
+
     </body>
 
 </html>
