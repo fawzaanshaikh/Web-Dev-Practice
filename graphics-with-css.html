@@ -19,7 +19,7 @@
         box-shadow: 25px 10px 0px 0px blue;
     }
 
-    /* Use of ::before and ::after */
+    /* Use of ::before and ::after */ /* They are pseudo classes indicating the state of the element */
     .heart {
     position: absolute;
     margin: auto;
@@ -59,17 +59,36 @@
     background: black;
     margin: 50px auto;
     border-radius: 5px;
-    animation-name: rainbow;
-    animation-duration: 4s;
+    animation-name: rainbow;  /* This is how the animation is referenced to*/
+    animation-duration: 4s;   /* The duration of the animation and how long it lasts */
   }
 
   @keyframes rainbow {
-    0% {
+    /* Completion of animation goes from 0% to 100% */
+    0% { /* This is the start of the animation */  
       background-color: blue;
     }
 
-    100% {
+    100% {  /* This is the end of the animation */
       background-color: yellow;
+    }
+  }
+
+  .register-hover-anim {
+    border-radius: 5px;
+    color: white;
+    background-color: #0F5897;
+    padding: 5px 10px 8px 10px;
+  }
+
+  .register-hover-anim:hover {
+    animation-name: background-color;
+    animation-duration: 1000ms;
+  }
+
+  @keyframes background-color {
+    100% {
+      background-color: #4791d0;
     }
   }
   
@@ -80,6 +99,7 @@
         <div class = "crescent"></div>
         <div class = "heart"></div>
         <div id = "rect"></div>
+        <button class = "register-hover-anim">Register</button>
 
     </body>
 
