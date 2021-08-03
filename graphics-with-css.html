@@ -84,11 +84,35 @@
   .register-hover-anim:hover {
     animation-name: background-color;
     animation-duration: 1000ms;
+    animation-fill-mode: forwards; /* The animation-fill-mode specifies the style applied to an element when the animation has finished */
   }
 
   @keyframes background-color {
     100% {
       background-color: #4791d0;
+    }
+  }
+
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity: 0.1;
     }
   }
   
@@ -100,6 +124,7 @@
         <div class = "heart"></div>
         <div id = "rect"></div>
         <button class = "register-hover-anim">Register</button>
+        <div id="ball"></div>
 
     </body>
 
