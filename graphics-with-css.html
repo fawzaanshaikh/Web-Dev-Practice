@@ -115,6 +115,36 @@
       opacity: 0.1;
     }
   }
+
+  #bouncing-ball {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    position: relative;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;  /* The number of times an animation is iterated is specified here*/
+  }
+
+  @keyframes bounce{
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: 249px;
+      width: 130px;
+      height: 70px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
   
     </style>
 
@@ -125,6 +155,7 @@
         <div id = "rect"></div>
         <button class = "register-hover-anim">Register</button>
         <div id="ball"></div>
+        <div id = "bouncing-ball"></div>
 
     </body>
 
