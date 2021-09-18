@@ -14,6 +14,9 @@
         <!-- The main element is used to wrap (you guessed it) the main content, and there should be only one per page. It's meant to surround the information related to your page's central topic -->
         <!-- The main tag also has an embedded landmark feature that assistive technology can use to navigate to the main content quickly. If you've ever seen a "Jump to Main Content" link at the top of a page, using the main tag automatically gives assistive devices that functionality. -->
         <main>
+            <!-- header tag. It's used to wrap introductory information or navigation links for its parent tag and works well around content that's repeated at the top on multiple pages. -->
+            <header>This is the header</header> 
+            
             <h2>h2 subheading</h2>
             <h3>With h3 sub-sub-heading</h3>
             <h3>And this too</h3>
@@ -26,9 +29,22 @@
 
             <article>This is an independent article</article>
 
+            <!-- <nav> tag is meant to wrap around the main navigation links in your page. -->
+            <nav>
+                <a href = "">link in nav tag</a>
+                <a href = "">link2</a>
+                <a href = "">link3</a>
+            </nav>
+
+            <!-- Adding an audio -->
+            <audio id = "anAudio" controls> <!-- controls attribute. This shows the browser default play, pause, and other controls, and supports keyboard functionality. This is a boolean attribute, meaning it doesn't need a value, its presence on the tag turns the setting on. -->
+                <source src = "" type = "audio/mpeg"> <!-- or type = "audio/ogg" -->
+            </audio>
+
             
         </main>
-
+        
+        <footer>This is the footer</footer>
 
 
     </body>
