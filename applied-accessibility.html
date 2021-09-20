@@ -51,7 +51,23 @@
             <form action = "#">
                 <label for = "name">Enter your name: </label> <!-- for should be the same as the input's id -->
                 <input type = "text" id = "name" name = "name">
+
+                <!-- The fieldset tag surrounds the entire grouping of radio buttons to achieve this. It often uses a legend tag to provide a description for the grouping, which screen readers read for each choice in the fieldset element. -->
+                <fieldset>
+                    <legend>This is a legend, you have options to choose from</legend>
+                    <input id = "one" type = "radio" name = "items" value = "one">
+                    <label for = "one">Choice One</label><br>
+                    <input id = "two" type = "radio" name = "items" value = "two">
+                    <label for = "two">Choice Two</label><br>
+                </fieldset>
+
+                <label for = "pick-date">Choose a date: </label>
+                <input type = "date" id = "pick-date" name = "date">
             </form>
+
+            <section>
+                <p>Today is the <time datetime = "2021-09-20">20<sup>th</sup> of September, 2021</time>.</p> <!-- This format of datetime helps stadardize the time and date read by assistive readers -->
+            </section>
         </main>
         
         <footer>This is the footer</footer>
