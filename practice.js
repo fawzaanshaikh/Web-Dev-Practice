@@ -24,4 +24,11 @@ arr.push("something"); // push() method pushes an element to the end of the arra
 arr.pop(); // pop() method removes the last element of the array
 
 
+// Dates
+let myDate = new Date(); // getTime, getFullYear, getMinutes, getHours, getDay
+
+// DOM Manipulation
+let elemClass = document.getElementsByClassName("div-container");
+// elemClass[0].classList.add("bg-change-blue");
+
 
