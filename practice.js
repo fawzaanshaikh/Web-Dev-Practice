@@ -31,4 +31,12 @@ let myDate = new Date(); // getTime, getFullYear, getMinutes, getHours, getDay
 let elemClass = document.getElementsByClassName("div-container");
 // elemClass[0].classList.add("bg-change-blue");
 
+let selectedFromQuery = document.querySelector(".div-container");
+// querySelector, querySelectorAll selects from the specified type of class or id and is mainly used for CSS
+
+// The DOM tree structure can use functions to add, modify and delete the child elements using: 
+// createElement, appendChild, replaceChild, removeChild
+var addChild = document.createElement('p');
+addChild.innerHTML = "This is an added para";
+elemClass[0].appendChild(addChild);
 
