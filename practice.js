@@ -40,3 +40,17 @@ var addChild = document.createElement('p');
 addChild.innerHTML = "This is an added para";
 elemClass[0].appendChild(addChild);
 
+// Events in JavaScript
+function clicked() {
+    formDiv = document.getElementById("form");
+    let clickedConfirmation = document.createElement("p");
+    clickedConfirmation.innerHTML = "Thank you for clicking me";
+    formDiv.appendChild(clickedConfirmation);
+}
+
+elemClass[0].addEventListener("click", function() {
+    console.log("The div container was clicked.");
+    var addChild = document.createElement('p');
+    addChild.innerHTML = "The div container was clicked";
+    elemClass[0].appendChild(addChild);
+})
