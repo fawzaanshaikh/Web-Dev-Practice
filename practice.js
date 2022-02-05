@@ -10,12 +10,12 @@ function avg(a, b) {
 
 c = avg(2, 3);
 
-console.log(c);
+// console.log(c);
 
 // Working with arrays
 var arr = [1, 2, 3, 4, 5, 6, 7];
 arr.forEach(function(element) {
-    console.log(element);   // This will print out all the elements of the array
+    // console.log(element);   // This will print out all the elements of the array
 });
 
 let j = 0; // let is a block-level variable allocation keyword. This helps in memory management as it is not retained after the scope is over.
@@ -54,3 +54,19 @@ elemClass[0].addEventListener("click", function() {
     addChild.innerHTML = "The div container was clicked";
     elemClass[0].appendChild(addChild);
 })
+
+// setTimeout and setInterval
+setTimeout(function() { // setTimeout does the work after the specified time
+    console.log("I am displayed after 3 seconds or 3000 milliseconds");
+}, 3000); // To cancel a setTimeout, you can use clearTimeout() and pass in teh value that is returned from setTimeout as shown below
+
+let iteration = 0;
+
+clr = setInterval(function() {  // setInterval keeps iterating per amount of time given
+    var addChild = document.createElement('p');
+    addChild.innerHTML = "I am added: " + iteration++ + " After every two seconds";
+    elemClass[0].appendChild(addChild);
+
+    if (iteration === 5) clearInterval(clr);    // Stops the running setInterval
+}, 2000);
+
