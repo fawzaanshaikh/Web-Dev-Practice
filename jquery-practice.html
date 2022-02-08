@@ -8,9 +8,9 @@
     </head>
     
     <body>
-        <p>This is the body1.</p>
-        <p>This is the body2.</p>
-        <p>This is the body3.</p>
+        <p class = "odd">This is the body1.</p>
+        <p id = "second-para">This is the body2.</p>
+        <p class = "odd">This is the body3.</p>
     </body>
 
     <script src = "js/jquery-3.6.0.min.js"></script>
@@ -24,7 +24,7 @@
             // Format of a jQuery statement: $("selector").action()
             // Selectors can be of the types: tagname, .class or #id
 
-            $("p").click(); // This means that we are clicking p
+            $("p").click(); // This means that we are clicking all <p> tags
 
             $("p").click(function() {
                 // When p is clicked, do this.
@@ -32,6 +32,14 @@
                 // $("p").hide() - this hides all the p's in the HTML document
                 $(this).hide(); // Hides the p that has been clicked on
             });
+
+            $("second-para").click(); // Clicks the element with id as 'second-para'
+
+            $("odd").click(); // Clicks the elements with the class as 'odd'
+
+            // Other selectors:
+            $("*").click(); // Clicks on all the elements
+            
         });
     </script>
 </html>
