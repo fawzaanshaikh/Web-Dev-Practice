@@ -5,41 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>jQuery Tutorial</title>
+
+        <style>
+            .block {
+                height: 60px;
+                width: 100px;
+                margin: auto;
+                background-color: blue;
+            }
+        </style>
     </head>
     
     <body>
         <p class = "odd">This is the body1.</p>
         <p id = "second-para">This is the body2.</p>
         <p class = "odd">This is the body3.</p>
+
+        <button id="toggle-button">Toggle Content Display</button>
+        <div class="content">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo vero nesciunt aut nam, possimus nihil qui, dignissimos ex temporibus blanditiis quo totam illo harum soluta doloremque exercitationem. Et, maxime obcaecati.
+        </div>
+
+        <br><br>
+
+        <div class="content2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda praesentium ad dolores facere cupiditate laboriosam consectetur ut temporibus quidem excepturi impedit esse, totam quis ratione, reiciendis possimus rerum? Magnam, nostrum.
+        </div>
+
+        <div class="block"></div>
+
+        <h3>THIS IS SO COOL!</h3>
     </body>
 
     <script src = "js/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Write your jQuery code here
-            // This ensures that your JS runs after the entire page is loaded, in order to avoid any problems
+    <script src="js/jquery-practice.js"></script>
 
-            console.log($); // $ stands for jQuery
-
-            // Format of a jQuery statement: $("selector").action()
-            // Selectors can be of the types: tagname, .class or #id
-
-            $("p").click(); // This means that we are clicking all <p> tags
-
-            $("p").click(function() {
-                // When p is clicked, do this.
-                console.log("You clicked on p.");
-                // $("p").hide() - this hides all the p's in the HTML document
-                $(this).hide(); // Hides the p that has been clicked on
-            });
-
-            $("second-para").click(); // Clicks the element with id as 'second-para'
-
-            $("odd").click(); // Clicks the elements with the class as 'odd'
-
-            // Other selectors:
-            $("*").click(); // Clicks on all the elements
-            
-        });
-    </script>
+    <!-- You can also add in a source reference to a site which gives jQuery through a CDN (Content Delivery Network) for eg. ajax.googleapis.com -->
 </html>
