@@ -83,4 +83,19 @@ $(document).ready(function() {
     $(".content2").html(); // Returns the html within that tag
     $(".content2").html("<p>This is some other paragraph</p>"); // Edits the html within that tag
 
+    // You can empty an element with empty()
+    // You can remove an element using remove()
+    // A class is added using addClass()
+    // A class is removed using removeClass()
+    // A class is toggled using toggleClass()
+
+    /* CSS Setting */
+    $(".content").css("background-color", "red"); // sets the background color of the div as red
+    $(".content").css("background-color"); // returns the background color of the div
+
+    /* Handling forms */
+    $("#inp").val() // Returns the value within the textbox
+    $("#ta").val() // Returns the value within the textarea
+    $("#inp").val("Set this as something else") // Edits the value within the textbox
+    $("#ta").val("This is a text area") // Edits the value within the textarea
 });
