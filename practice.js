@@ -3,6 +3,8 @@
 // Everything related to Operators, Variables, etc. are the same as other languages
 // Datatypes -> number, string, boolean, symbol, float, ...
 
+// To make the code follow more rules, we can write "use strict"; at the start of our JS code.
+
 /* -------------------------------------------- */
 function avg(a, b) {
     return (a + b) / 2;
@@ -11,6 +13,20 @@ function avg(a, b) {
 c = avg(2, 3);
 
 // console.log(c);
+
+/* -------------------------------------------- */
+// Objects
+let obj = {
+    r: 10,
+    g: 20,
+    b: 30,
+    func: function() {
+        console.log("This is a function wihtin the object");
+    }
+};
+
+// Properties within the object can be accessed using:
+// console.log(obj.func);
 
 /* -------------------------------------------- */
 // Working with arrays
@@ -49,6 +65,10 @@ function clicked() {
     let clickedConfirmation = document.createElement("p");
     clickedConfirmation.innerHTML = "Thank you for clicking me";
     formDiv.appendChild(clickedConfirmation);
+
+    let conf = confirm("Are you sure?"); // confirm returns a true/ false value based on user response
+    if (conf) console.log("Okay.");
+    else console.log("Nokay.");
 }
 
 elemClass[0].addEventListener("click", function() {
