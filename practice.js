@@ -80,7 +80,7 @@ elemClass[0].addEventListener("click", function() {
 
 /* -------------------------------------------- */
 // setTimeout and setInterval
-setTimeout(function() { // setTimeout does the work after the specified time
+setTimeout(function() { // setTimeout does the work after the specified time, this is the callback function - this helps JS be asynchronous and not block the main thread
     console.log("I am displayed after 3 seconds or 3000 milliseconds");
 }, 3000); // To cancel a setTimeout, you can use clearTimeout() and pass in the value that is returned from setTimeout as shown below
 
