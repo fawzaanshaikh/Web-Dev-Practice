@@ -98,4 +98,10 @@ $(document).ready(function() {
     $("#ta").val() // Returns the value within the textarea
     $("#inp").val("Set this as something else") // Edits the value within the textbox
     $("#ta").val("This is a text area") // Edits the value within the textarea
+
+    /* AJAX
+        It is the art of exchanging data with the server without reloading the page
+    */
+   // GET from server - $.get("url")
+   // POST to server - $.post("url")
 });
